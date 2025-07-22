@@ -47,7 +47,20 @@ Editar
 - Organização de código com boas práticas
 - Uso do GitHub para versionamento
 
-## 👤 Autor
+### 🛠 Tecnologias
+Este projeto foi feito em linguagem C.
 
-- Ahlen Mhethika Frigeri
-- [github.com/ahlenfrigeri](https://github.com/ahlenfrigeri)
+### 🚀 Como usar no computador
+Se você estiver no Windows:
+1. Baixe e instale o Dev C++
+2. Abra o arquivo cartorioebac.c
+3. Clique em “Executar” (ou pressione F11 no teclado)
+
+Se quiser usar pelo terminal (Linux ou Mac):
+1. Abra o terminal na pasta onde está o arquivo
+2. Digite:
+   gcc cartorioebac.c -o cartorio
+   ./cartorio
+
+### 👤 Autor
+Projeto feito por Ahlen Mhethika Frigeri, como parte do curso da EBAC.
