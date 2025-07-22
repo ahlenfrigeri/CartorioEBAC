@@ -3,8 +3,21 @@
 #include <locale.h>    // Suporte a idiomas
 #include <string.h>    // Manipulação de strings
 
-int registrar()
-{
+int sair(); // Declaração antecipada
+
+int voltar_ou_sair() {
+    int escolha;
+    printf("\nDeseja voltar ao menu principal (1) ou sair (0)? ");
+    scanf("%d", &escolha);
+
+    if (escolha == 0) {
+        sair(); // Encerra o programa
+    }
+
+    return 0; // Volta ao menu
+}
+
+int registrar() {
     char arquivo[40];
     char cpf[40];
     char nome[40];
@@ -40,11 +53,11 @@ int registrar()
 
     printf("Registro realizado com sucesso!\n");
     system("pause");
+    voltar_ou_sair();
     return 0;
 }
 
-int consultar()
-{
+int consultar() {
     char cpf[40];
     char conteudo[200];
 
@@ -55,6 +68,7 @@ int consultar()
     if (file == NULL) {
         printf("Não foi possível abrir o arquivo. Usuário não localizado.\n");
         system("pause");
+        voltar_ou_sair();
         return 1;
     }
 
@@ -66,11 +80,11 @@ int consultar()
     fclose(file);
     printf("\n\n");
     system("pause");
+    voltar_ou_sair();
     return 0;
 }
 
-int deletar()
-{
+int deletar() {
     char cpf[40];
     printf("Digite o CPF do usuário a ser deletado: ");
     scanf("%s", cpf);
@@ -82,23 +96,21 @@ int deletar()
     }
 
     system("pause");
+    voltar_ou_sair();
     return 0;
 }
 
-int sair()
-{
+int sair() {
     printf("Saindo do programa...\n");
     system("pause");
     exit(0); // Termina a execução do programa
 }
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "Portuguese");
     int opcao = 0;
 
-    while (1)
-    {
+    while (1) {
         system("cls"); // Limpa tela (Windows)
         printf("### Cartório da EBACC ###\n\n");
         printf("Escolha a opção desejada:\n");
@@ -111,8 +123,7 @@ int main()
 
         system("cls");
 
-        switch (opcao)
-        {
+        switch (opcao) {
         case 1:
             registrar();
             break;
@@ -134,4 +145,5 @@ int main()
 
     return 0;
 }
+
 
